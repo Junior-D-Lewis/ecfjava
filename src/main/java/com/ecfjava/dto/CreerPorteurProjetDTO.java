@@ -1,20 +1,19 @@
-package com.ecfjava.entities;
+package com.ecfjava.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-@Entity
-public class PorteurProjet {
-
-    @Id
-    @GeneratedValue(strategy =  GenerationType.AUTO)
+public class CreerPorteurProjetDTO {
     private Long id;
     private String nom;
     private String email;
     private String password;
-    
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Long getId() {
         return id;
     }
@@ -33,11 +32,4 @@ public class PorteurProjet {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getPassword() {
-        return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }
