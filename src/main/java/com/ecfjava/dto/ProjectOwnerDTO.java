@@ -1,6 +1,6 @@
 package com.ecfjava.dto;
 
-public class PorteurProjetDTO {
+public class ProjectOwnerDTO {
     private Long id;
     private String nom;
     private String email;

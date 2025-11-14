@@ -1,12 +1,15 @@
 package com.ecfjava.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
-public class PorteurProjet {
+public class ProjectOwner {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -14,6 +17,8 @@ public class PorteurProjet {
     private String nom;
     private String email;
     private String password;
+    @OneToMany(mappedBy = "projectOwner")
+    private List<Project> projects;
     
     public Long getId() {
         return id;
@@ -38,6 +43,13 @@ public class PorteurProjet {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 
 }
